@@ -23,3 +23,15 @@ Basic_stastice1 = np.hstack((Befor_trim, After_trimfrm))
 print("        Before  After")
 for stat_labels1, row1 in zip(stat_labels1, Basic_stastice1):
     print('%s [%s]' % (stat_labels1,''.join('%07s' % a for a in row1)))
+
+
+CRIM_TRIMED = stats.trimboth(CRIM, 0.2)
+fig, (ax1, ax2) = plt.subplots(1,2, figsize=(10,2))
+axs = [ax1, ax2]
+df = [CRIM, CRIM_TRIMED]
+list_mathods = ['Befor trim', 'After trim']
+for n in range(0, len(axs)):
+    axs[n].hist(df[n], bins='auto')
+    axs[n].set_title('{}'.format(list_mathods[n]))
+
+#Correlation
