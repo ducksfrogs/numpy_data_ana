@@ -42,3 +42,10 @@ plot(fig)
 
 df = pd.DataFrame(iris_data.data, columns=[iris_data.feature_names])
 df['class'] = [iris_data.target_names[i] for i in iris_data.target]
+
+import plotly.figure_factory as ff
+
+fig = ff.create_scatterplotmatrix(df, index='class', diag='histgram', size=10
+                                  height=800, with=800)
+
+plot(fig)
