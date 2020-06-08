@@ -51,3 +51,8 @@ Y = bostondf.iloc[:, 13:14].values
 
 # coefficient, intercept, cost_history = train(X, Y, coefficient, intercept, learning_rate, iteration)
 coefficient, intercept, cost_history = train(X, Y, coefficient, intercept=2, learning_rate=0.01, iteration=10001)
+
+y_hat = X*coefficient + intercept
+plt.plot(X, Y, 'bo')
+plt.plot(X, y_hat)
+plt.show()
